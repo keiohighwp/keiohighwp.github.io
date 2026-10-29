@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0F2A5C">
+  <title>部員ガイド｜慶應義塾高等学校 水球部</title>
+  <meta name="description" content="慶應義塾高等学校水球部の部員向けガイド。ビジョン、心構え、部則、組織、表彰、戦術、連絡、安全。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/assets/site.css">
+  <script src="/assets/canon.js" defer></script>
+  <script src="/assets/app.js" defer></script>
+</head>
+<body class="theme-doc">
+
+<!-- 部員向けガイド。共通の事実は assets/canon.js から差し込まれます。
+     部則はこのページにだけあります（慶應水球BOT（LINE）にも同じ内容を持たせる）。 -->
+
+<header class="doc-header">
+  <div class="doc-header-inner">
+    <p class="doc-club" data-c="club.name">慶應義塾高等学校 水球部</p>
+    <h1 class="doc-title">部員ガイド</h1>
+    <p class="doc-lead">自分で考えて動くための、地図と約束事をまとめています。</p>
+    <p class="doc-meta">最終更新 <span data-updated></span></p>
+  </div>
+</header>
+<div class="lane-rope" aria-hidden="true"></div>
+
+<div class="tabs-wrap">
+  <nav class="tabs" role="tablist" aria-label="ページ内の章">
+    <button role="tab" id="t-vision" aria-controls="vision">🎯 ビジョン</button>
+    <button role="tab" id="t-policy" aria-controls="policy">🧭 心構え</button>
+    <button role="tab" id="t-rules" aria-controls="rules">📘 部則</button>
+    <button role="tab" id="t-org" aria-controls="org">👥 組織</button>
+    <button role="tab" id="t-awards" aria-controls="awards">🏅 表彰</button>
+    <button role="tab" id="t-tactics" aria-controls="tactics">♟️ 戦術</button>
+    <button role="tab" id="t-comms" aria-controls="comms">💬 連絡</button>
+    <button role="tab" id="t-safety" aria-controls="safety">🚑 安全</button>
+  </nav>
+</div>
+
+<main class="doc-main">
+
+  <!-- ========== ビジョン ========== -->
+  <div class="panel" id="vision" role="tabpanel" aria-labelledby="t-vision">
+    <div class="vision">
+      <p class="vision-label">私たちのビジョン</p>
+      <p class="vision-text" data-c="vision.main"></p>
+      <p class="vision-sub" data-c="vision.sub"></p>
+    </div>
+    <section>
+      <h2><span class="em" aria-hidden="true">🏛️</span>慶應水球とは</h2>
+      <div data-render="about"></div>
+    </section>
+    <section>
+      <h2><span class="em" aria-hidden="true">🌏</span>日本スポーツ界のロールモデルへ</h2>
+      <div data-render="vision-body"></div>
+    </section>
+  </div>
+
+  <!-- ========== 心構え ========== -->
+  <div class="panel" id="policy" role="tabpanel" aria-labelledby="t-policy" hidden>
+    <section>
+      <h2><span class="em" aria-hidden="true">🧭</span>3つの心構え</h2>
+      <p>部員と指導陣に共通する基盤です。</p>
+      <div data-render="attitudes"></div>
+    </section>
+    <section>
+      <h2><span class="em" aria-hidden="true">🧰</span>指導陣が渡す3つのツール</h2>
+      <p>感情論で一方的に教え込む指導はしません。皆さんが自分で進めるよう、指導陣は次の3つを渡します。</p>
+      <div data-render="tools3"></div>
+    </section>
+    <section>
+      <h2><span class="em" aria-hidden="true">⚖️</span>指導陣のスタンス</h2>
+      <div data-render="stance"></div>
+    </section>
+    <section>
+      <h2><span class="em" aria-hidden="true">🔄</span>皆さんの声で指導を変える</h2>
+      <div data-render="eval360" data-v="student"></div>
+      <div data-render="diary" data-v="student"></div>
+    </section>
+  </div>
+
+  <!-- ========== 部則 ==========
+       見直し済み（2026年10月）。手続きはBOTへ移管し、ここには約束事だけを残す。
+       変更したら、慶應水球BOTの知識も同時に更新すること。 -->
+  <div class="panel" id="rules" role="tabpanel" aria-labelledby="t-rules" hidden>
+    <section>
+      <h2><span class="em" aria-hidden="true">📘</span>部則</h2>
+      <p>安全に、気持ちよく活動するための最低限の約束です。考え方の土台は<a href="#policy" data-goto="policy">3つの心構え</a>にあります。出欠連絡や練習報告の手続きは、LINEの慶應水球BOTが案内します。</p>
+
+      <div class="rulebook">
+        <article class="rule-sec">
+          <h3><span>1</span>👋 挨拶と礼儀</h3>
+          <ul class="bullets">
+            <li>先輩・指導陣・OB・保護者には、敬意を持って接する。</li>
+            <li>部内外を問わず、会う人みんなに自分から挨拶する。監督・コーチ・OBには立って挨拶する。</li>
+            <li>会議室や監督室などに入るときは「失礼します」と一言かける。</li>
+          </ul>
+        </article>
+
+        <article class="rule-sec">
+          <h3><span>2</span>🎒 慶應を背負っている自覚</h3>
+          <ul class="bullets">
+            <li>制服のときだけではありません。部のジャージを着ているだけ、リュックを持っているだけでも、周りからは「慶應の水球部員」に見えています。その状態すべてを、制服を着ているのと同じと捉えて行動する。</li>
+            <li>SNSには、自分や他人の個人情報（顔・名前・居場所など）、本人の許可がない写真や動画、人を傷つける内容、部の内部の情報を投稿しない。詳しくは学校の規定に従う。</li>
+          </ul>
+        </article>
+
+        <article class="rule-sec">
+          <h3><span>3</span>🏊 施設と共用の場所</h3>
+          <ul class="bullets">
+            <li>施設と備品は丁寧に扱う。靴箱・ロッカー・ミーティングルーム・倉庫などの共用の場所は綺麗に使う。</li>
+            <li>プールサイドでの食事は禁止。着替えに使っている観戦席での食事はよい。ゴミは各自で持ち帰る。</li>
+            <li>着替えるときは、タオルなどを巻いて隠す。プールは外から見えるため。</li>
+            <li>準備と片付けは、学年を問わず気づいた人から動く（心構え「与える側であれ」）。練習開始時刻には準備を終えておく。</li>
+          </ul>
+        </article>
+
+        <article class="rule-sec">
+          <h3><span>4</span>⏰ 練習の時間と流れ</h3>
+          <ul class="bullets">
+            <li>体操開始は練習開始の20分前。授業がある日は10分前でよい（平日は15:10、木曜は16:10）。</li>
+            <li>流れは「体操 → メニュー共有 → 入水」。体操は上級生を中心に全員で行う。</li>
+            <li>体操開始時刻に体操へ参加できなかった場合は遅刻。試合・遠征は、指示された集合時刻に集合場所にいなかった場合は遅刻。</li>
+          </ul>
+        </article>
+
+        <article class="rule-sec">
+          <h3><span>5</span>📅 出欠</h3>
+          <ul class="bullets">
+            <li>休むかどうかは、自分で考えて決め、報告する。体調管理は自分の責任。体調が悪いときは無理をせず休む。</li>
+            <li>練習への参加回数は、それ自体が評価の対象です。休んだ分は、自分なりの埋め合わせを期待しています。</li>
+          </ul>
+          <ol class="flow">
+            <li><div><strong>練習日の2日前の23:59までに、LINEの慶應水球BOTへ連絡</strong>連絡はスケジュールとして全員に共有されます。</div></li>
+            <li><div><strong>間に合わなかったら、個別トーク（自分と指導者全員）へ</strong>当日の体調不良など、期限までに伝えられなかった場合は個別に報告する。</div></li>
+          </ol>
+        </article>
+
+        <article class="rule-sec">
+          <h3><span>6</span>📚 試験期間</h3>
+          <ul class="bullets">
+            <li>定期試験の2週間前から、試験勉強のために練習を休むことを全員が選べる。ただし、試験勉強で休んだ分も参加回数の評価に含める。勉強は普段から積み重ねておくのが基本。</li>
+            <li>直近の成績が6.0以下、または6C以下の科目が1つ以上ある人は、この期間の試験勉強が必須。学習計画表を作り、指導陣と共有する。</li>
+          </ul>
+        </article>
+
+        <article class="rule-sec">
+          <h3><span>7</span>🩹 怪我</h3>
+          <ul class="bullets">
+            <li>医師の判断を最優先する。</li>
+            <li>許可された範囲で何をするかは、自分で考えて提案し、指導者と話し合って合意する。</li>
+          </ul>
+        </article>
+
+        <article class="rule-sec">
+          <h3><span>8</span>📝 練習報告</h3>
+          <ul class="bullets">
+            <li>練習報告と、練習試合などの動画のアップロードは、当番がBOTで行う。当番と期限はBOTが案内する。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <!-- ========== 組織 ========== -->
+  <div class="panel" id="org" role="tabpanel" aria-labelledby="t-org" hidden>
+    <section>
+      <h2><span class="em" aria-hidden="true">👥</span>指導陣の役割</h2>
+      <p>一人ひとりが専門性を持ち、皆さんの成長を継続的に支えるための体制です。</p>
+      <div data-render="roles" data-director></div>
+    </section>
+    <section>
+      <h2><span class="em" aria-hidden="true">🔴</span>チーム編成と試合時の体制</h2>
+      <p>チームは、REDとBLUEの2つで編成します。</p>
+      <div data-render="teams"></div>
+    </section>
+    <section>
+      <h2><span class="em" aria-hidden="true">🤝</span>協生会（塾高OB会）</h2>
+      <div data-render="kyoseikai" data-v="student"></div>
+      <p class="small">OBの方々の善意で成り立っている支援です。</p>
+    </section>
+  </div>
+
+  <!-- ========== 表彰 ========== -->
+  <div class="panel" id="awards" role="tabpanel" aria-labelledby="t-awards" hidden>
+    <section>
+      <h2><span class="em" aria-hidden="true">⚔️</span>試合機会</h2>
+      <p>練習で培った技術を実戦で試し、自分の現在地を客観的に知るための機会です。誰もが挑戦できる、開かれた競争環境です。</p>
+      <h3>⚔️ 独自リーグ</h3>
+      <p>レベル別のリーグ戦を通じて、常に上のレベルへ挑戦できる実戦の機会を用意しています。</p>
+    </section>
+    <section>
+      <h2><span class="em" aria-hidden="true">🏅</span>表彰制度</h2>
+      <p>競技の成績だけではありません。チームへの貢献、考える力、失敗を恐れない挑戦を称えます。</p>
+      <div data-render="awards"></div>
+      <p><a href="/welcome/award.html">歴代の受賞者を見る</a></p>
+    </section>
+  </div>
+
+  <!-- ========== 戦術 ========== -->
+  <div class="panel" id="tactics" role="tabpanel" aria-labelledby="t-tactics" hidden>
+    <section>
+      <h2><span class="em" aria-hidden="true">♟️</span>戦術とシステム</h2>
+      <div data-render="tactics"></div>
+    </section>
+  </div>
+
+  <!-- ========== 連絡 ========== -->
+  <div class="panel" id="comms" role="tabpanel" aria-labelledby="t-comms" hidden>
+    <section>
+      <h2><span class="em" aria-hidden="true">💬</span>連絡ツールの使い分け</h2>
+      <div data-render="comms"></div>
+    </section>
+  </div>
+
+  <!-- ========== 安全 ========== -->
+  <div class="panel" id="safety" role="tabpanel" aria-labelledby="t-safety" hidden>
+    <section>
+      <h2><span class="em" aria-hidden="true">🚑</span>緊急連絡先</h2>
+      <p>番号をタップすると電話がかかります。</p>
+      <div data-render="hotlines"></div>
+    </section>
+    <section>
+      <h2><span class="em" aria-hidden="true">🩹</span>けが人が出たら</h2>
+      <div data-render="safety-student"></div>
+    </section>
+  </div>
+
+</main>
+
+<footer class="doc-footer">
+  <p data-c="club.name">慶應義塾高等学校 水球部</p>
+</footer>
+
+<noscript><p style="padding:16px;text-align:center">このページの表示にはJavaScriptが必要です。</p></noscript>
+</body>
+</html>
