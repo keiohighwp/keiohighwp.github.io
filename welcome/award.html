@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0A1D42">
+  <title>歴史と表彰｜慶應義塾高等学校 水球部</title>
+  <meta name="description" content="1915年創部の慶應水球の歩みと、部員同士で称え合う3つの賞の歴代受賞者。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="歴史と表彰｜慶應義塾高等学校 水球部">
+  <meta property="og:description" content="1915年創部の慶應水球の歩みと、部員同士で称え合う3つの賞。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="/assets/site.css">
+  <script src="/assets/canon.js" defer></script>
+  <script src="/assets/app.js" defer></script>
+</head>
+<body class="theme-landing">
+
+<!-- 歴史と表彰。歴史・賞の定義・受賞者はすべて assets/canon.js から差し込まれます。
+     受賞者を追加するときは canon.js の awards → winners に1行足し、next の年度を進めてください。 -->
+
+<header class="landing-hero">
+  <p class="club" data-c="club.name">慶應義塾高等学校 水球部</p>
+  <h1>歴史と表彰</h1>
+  <p class="lead">受け継がれてきた知性と、私たちが大切にしている価値観。</p>
+</header>
+<div class="lane-rope" aria-hidden="true"></div>
+
+<main>
+  <section class="l-section">
+    <h2><span class="em" aria-hidden="true">📜</span>慶應水球の歩み</h2>
+    <div class="l-desc" data-render="about" data-v="plain"></div>
+    <div data-render="milestones"></div>
+    <div class="target">
+      <strong>目標　<span data-c="club.target"></span></strong>
+      <p>先輩たちが築いた歴史を受け継ぎながら、自分たちの手で新しい記録をつくる挑戦を、全力で応援します。</p>
+    </div>
+  </section>
+
+  <section class="l-section">
+    <h2><span class="em" aria-hidden="true">🏅</span>3つの賞</h2>
+    <p class="l-desc">チーム全体で称え合い、大切にしている賞です。</p>
+    <div data-render="awards" data-v="plain" data-winners></div>
+  </section>
+</main>
+
+<div class="back"><a href="/welcome/">◀ 新歓ページへ戻る</a></div>
+<footer class="landing-foot"><p data-c="club.name">慶應義塾高等学校 水球部</p></footer>
+</body>
+</html>
