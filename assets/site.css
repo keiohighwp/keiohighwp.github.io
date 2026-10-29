@@ -1,0 +1,560 @@
+/* ==========================================================================
+   慶應水球部 共通デザイン（site.css）
+   色・文字・余白はすべて :root のトークンで管理しています。
+   色を変えたいときは、トークンの値だけを変えてください。
+   ========================================================================== */
+
+:root {
+  /* 慶應の紺・赤・金をベースに、プールの水色を面に使う */
+  --brand: #0F2A5C;       /* 背景用の紺（ダークモードでも変えない） */
+  --navy: #0F2A5C;        /* 文字・線用の紺 */
+  --navy-deep: #0A1D42;
+  --red: #B4182D;
+  --gold: #8F7130;        /* 白地の文字用（コントラスト確保） */
+  --gold-soft: #E2CC8E;   /* 紺地の文字用 */
+  --paper: #F4F6F9;
+  --surface: #FFFFFF;
+  --pool: #E7EFF7;
+  --ink: #18202E;
+  --muted: #586274;
+  --line: #D8DFE8;
+  --focus: #2F6FE0;
+
+  --f-body: 'Zen Kaku Gothic New', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+  --f-display: 'Shippori Mincho B1', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+
+  --measure: 40rem;
+  --gutter: 16px;
+  --radius-s: 6px;
+  --radius-m: 10px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-doc {
+    --paper: #0C1424;
+    --surface: #131D31;
+    --pool: #18253D;
+    --ink: #E6EAF1;
+    --muted: #A2ACBD;
+    --line: #26334D;
+    --gold: #D7BD7A;
+    --red: #E2475B;
+    --navy: #9DB8EA;
+  }
+}
+
+/* ---------- ベース ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 64px; }
+body {
+  margin: 0;
+  font-family: var(--f-body);
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--ink);
+  background: var(--paper);
+  font-feature-settings: "palt" 0;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-underline-offset: 3px; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
+h1, h2, h3 { line-height: 1.4; margin: 0; font-weight: 700; }
+p { margin: 0 0 1em; }
+p:last-child { margin-bottom: 0; }
+small { font-size: .8125rem; }
+.small { font-size: .875rem; color: var(--muted); }
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---------- コースロープ（この部だけのモチーフ） ---------- */
+.lane-rope {
+  height: 14px;
+  background-color: var(--navy-deep);
+  background-image:
+    radial-gradient(ellipse 8px 4.5px at 10px 7px, var(--red) 96%, transparent 100%),
+    radial-gradient(ellipse 8px 4.5px at 30px 7px, #FFFFFF 96%, transparent 100%);
+  background-size: 40px 14px;
+  background-repeat: repeat-x;
+}
+
+/* ==========================================================================
+   内部向けガイド（学生・保護者・指導者）
+   ========================================================================== */
+.theme-doc { background: var(--paper); color: var(--ink); }
+
+.doc-header {
+  background: var(--brand);
+  color: #fff;
+  padding: 40px var(--gutter) 28px;
+}
+.doc-header-inner { max-width: var(--measure); margin: 0 auto; }
+.doc-club {
+  font-size: .8125rem;
+  color: var(--gold-soft);
+  letter-spacing: .08em;
+  margin: 0 0 10px;
+}
+.doc-title {
+  font-family: var(--f-display);
+  font-weight: 800;
+  font-size: clamp(1.75rem, 6.4vw, 2.375rem);
+  line-height: 1.3;
+  letter-spacing: .02em;
+}
+.doc-lead { margin: 12px 0 0; font-size: .9375rem; color: #D4DCEA; }
+.doc-meta { margin-top: 18px; font-size: .75rem; color: #9FB0CC; }
+
+/* タブ（横スクロール・上部固定） */
+.tabs-wrap {
+  position: sticky; top: 0; z-index: 20;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+.tabs {
+  display: flex; gap: 4px;
+  max-width: calc(var(--measure) + 2 * var(--gutter));
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.tabs::-webkit-scrollbar { display: none; }
+.tabs [role="tab"] {
+  flex: 0 0 auto;
+  appearance: none; border: 0; background: none;
+  font: inherit; font-size: .9375rem; font-weight: 500;
+  color: var(--muted);
+  padding: 14px 10px 12px;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.tabs [role="tab"][aria-selected="true"] { color: var(--ink); font-weight: 700; border-bottom-color: var(--red); }
+.tabs [role="tab"]:hover { color: var(--ink); }
+
+/* 本文 */
+.doc-main { max-width: calc(var(--measure) + 2 * var(--gutter)); margin: 0 auto; padding: 8px var(--gutter) 72px; }
+.panel { padding-top: 28px; }
+.panel > section + section { margin-top: 48px; }
+.panel h2 {
+  font-family: var(--f-display);
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--navy);
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+.panel h3 { font-size: 1.0625rem; margin: 28px 0 8px; }
+.panel h2 + h3, .panel h2 + * > h3:first-child { margin-top: 0; }
+.panel h3 small, .panel h3 em { font-weight: 500; font-style: normal; color: var(--muted); font-size: .8125rem; margin-left: 8px; }
+
+.bullets { margin: 0 0 1em; padding-left: 1.25em; }
+.bullets li { margin: .25em 0; }
+.bullets li::marker { color: var(--red); }
+
+/* ビジョン（紺の帯） */
+.vision {
+  background: var(--navy-deep);
+  color: #fff;
+  border-radius: var(--radius-m);
+  padding: 28px 22px;
+  margin: 0 0 24px;
+}
+.vision-label { font-size: .8125rem; color: var(--gold-soft); margin: 0 0 8px; }
+.vision-text {
+  font-family: var(--f-display);
+  font-weight: 800;
+  font-size: clamp(1.375rem, 5.6vw, 1.875rem);
+  line-height: 1.45;
+  letter-spacing: .04em;
+  margin: 0;
+}
+.vision-sub { margin: 10px 0 0; color: #C9D3E6; font-size: .9375rem; }
+
+/* 注記ボックス */
+.note {
+  background: var(--pool);
+  border-left: 3px solid var(--navy);
+  border-radius: 0 var(--radius-s) var(--radius-s) 0;
+  padding: 16px 18px;
+  margin: 24px 0;
+}
+.note h3 { margin: 0 0 6px !important; font-size: 1rem; }
+.note-eval { border-left-color: var(--gold); }
+
+/* 線引き */
+.line-box {
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--red);
+  background: var(--surface);
+  border-radius: var(--radius-s);
+  padding: 18px;
+  margin: 20px 0;
+}
+.line-box h3 { margin-top: 0 !important; }
+.line-criterion { background: var(--pool); padding: 10px 12px; border-radius: var(--radius-s); }
+.line-criterion span { display: inline-block; font-weight: 700; color: var(--red); margin-right: 8px; }
+.line-steps { list-style: none; margin: 16px 0; padding: 0; counter-reset: none; }
+.line-steps li { position: relative; padding: 0 0 14px 18px; border-left: 2px solid var(--line); margin-left: 6px; }
+.line-steps li:last-child { padding-bottom: 0; border-left-color: transparent; }
+.line-steps li::before { content: ''; position: absolute; left: -7px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--surface); border: 2px solid var(--red); }
+.line-step-n { font-size: .8125rem; color: var(--muted); margin-right: 8px; }
+.line-steps p { margin: 4px 0 0; }
+.line-purpose { font-size: .9375rem; color: var(--muted); }
+
+/* 心構え */
+.attitude { padding: 20px 0; border-bottom: 1px solid var(--line); }
+.attitude:first-child { padding-top: 0; }
+.attitude h3 { display: flex; align-items: center; gap: 12px; margin: 0 0 10px !important; font-family: var(--f-display); font-size: 1.25rem; font-weight: 800; }
+.attitude-num {
+  flex: 0 0 auto;
+  width: 32px; height: 32px; border-radius: 50%;
+  display: inline-grid; place-items: center;
+  background: var(--brand); color: #fff;
+  font-family: var(--f-body); font-size: .9375rem;
+}
+.pair { display: grid; gap: 10px; margin: 12px 0 0; }
+.pair div { background: var(--pool); border-radius: var(--radius-s); padding: 10px 12px; }
+.pair dt { font-size: .8125rem; font-weight: 700; color: var(--muted); }
+.pair dd { margin: 2px 0 0; font-size: .9375rem; }
+@media (min-width: 560px) { .pair { grid-template-columns: 1fr 1fr; } }
+
+/* 3つのツール */
+.tools3 { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.tools3 li { display: grid; grid-template-columns: 40px 1fr; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.tools3 i { font-size: 1.375rem; color: var(--red); padding-top: 4px; text-align: center; }
+.tools3 h3 { margin: 0 0 2px !important; }
+.tools3 p { margin: 0; color: var(--ink); }
+
+/* 役割（定義リスト） */
+.roles { margin: 0; }
+.role { display: grid; grid-template-columns: 7.5em 1fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.role dt { font-weight: 700; }
+.role dd { margin: 0; }
+.role .term { display: block; font-weight: 500; font-size: .8125rem; color: var(--muted); }
+.role-director { border-bottom: 0; }
+.role-director dt { color: var(--navy); }
+
+/* 逆ピラミッド */
+.layers { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.layers li { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-s); padding: 14px 16px; }
+.layers li:nth-child(1) { margin: 0; }
+.layers li:nth-child(2) { margin: 0 5%; }
+.layers li:nth-child(3) { margin: 0 10%; background: var(--navy-deep); color: #fff; border-color: var(--navy-deep); }
+.layer-label { display: block; font-size: .8125rem; color: var(--muted); }
+.layers li:nth-child(3) .layer-label { color: var(--gold-soft); }
+.layers p { margin: 4px 0 0; font-size: .9375rem; }
+
+/* チーム */
+.teams { display: grid; gap: 12px; margin-bottom: 12px; }
+@media (min-width: 560px) { .teams { grid-template-columns: 1fr 1fr; } }
+.team { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-s); padding: 16px; }
+.team h3 { margin: 0 0 6px !important; }
+.bench { font-size: .9375rem; color: var(--muted); }
+.bench strong { display: block; color: var(--ink); }
+.chips { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.chips li { font-size: .8125rem; padding: 2px 10px; border: 1px solid var(--line); border-radius: 999px; background: var(--paper); }
+
+/* 表彰 */
+.awards { display: grid; gap: 14px; }
+.award { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--gold); border-radius: var(--radius-s); padding: 16px 18px; }
+.award h3 { margin: 0 0 6px !important; font-family: var(--f-display); font-size: 1.1875rem; font-weight: 800; }
+.award-timing { font-size: .8125rem; color: var(--muted); margin-top: 6px; }
+
+/* シーズン */
+.seasons { list-style: none; margin: 0; padding: 0; }
+.seasons li { padding: 14px 0 14px 18px; border-left: 3px solid var(--line); position: relative; }
+.seasons li::before { content: ''; position: absolute; left: -8px; top: 20px; width: 13px; height: 13px; border-radius: 50%; background: var(--red); }
+.seasons li:nth-child(2)::before { background: var(--gold); }
+.seasons li:nth-child(3)::before { background: var(--brand); box-shadow: 0 0 0 2px var(--paper), 0 0 0 3px var(--line); }
+.season-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin-bottom: 4px; }
+.season-head strong { font-size: 1.0625rem; }
+.season-head span { font-weight: 700; color: var(--red); }
+.season-head em { font-style: normal; font-size: .8125rem; color: var(--muted); }
+.seasons p { margin: 0; }
+
+/* 番号付きステップ（順序があるものだけ） */
+.steps { list-style: none; margin: 0 0 16px; padding: 0; counter-reset: s; }
+.steps > li { counter-increment: s; position: relative; padding: 0 0 18px 44px; }
+.steps > li::before {
+  content: counter(s);
+  position: absolute; left: 0; top: 0;
+  width: 30px; height: 30px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--brand); color: #fff; font-weight: 700; font-size: .875rem;
+}
+.steps > li h3 { margin: 2px 0 4px !important; }
+
+/* 緊急連絡先 */
+.hotlines { list-style: none; margin: 0 0 24px; padding: 0; display: grid; gap: 8px; }
+.hotlines li { display: grid; grid-template-columns: 1fr auto; gap: 0 12px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-s); padding: 12px 14px; }
+.hot-label { grid-column: 1 / -1; font-size: .8125rem; color: var(--muted); }
+.hot-num { text-align: right; }
+.hot-num a { font-size: 1.125rem; font-weight: 700; text-decoration: none; color: var(--navy); white-space: nowrap; }
+.hot-num small { display: block; color: var(--muted); }
+.hot-primary { background: var(--red) !important; border-color: var(--red) !important; color: #fff; }
+.hot-primary .hot-label { color: #FFD9DE; }
+.hot-primary .hot-num a { color: #fff; font-size: 1.75rem; }
+
+/* 連絡ツール */
+.comms { display: grid; gap: 12px; }
+.comm { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-s); padding: 16px 18px; }
+.comm h3 { display: flex; align-items: center; gap: 8px; margin: 0 0 6px !important; }
+.comm h3 i { font-size: 1.25rem; color: var(--navy); }
+.comm-to { font-size: .8125rem; font-weight: 700; color: var(--muted); margin: 10px 0 2px; }
+.comm .bullets { margin-bottom: 0; }
+
+/* 戦術 */
+.tsteps { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 16px 0 8px; padding: 0; }
+.tsteps li { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-s); padding: 12px 14px; position: relative; }
+.tsteps li + li::before { content: ''; position: absolute; left: -10px; top: 50%; width: 10px; height: 2px; background: var(--red); }
+.tsteps span { display: block; font-size: .8125rem; color: var(--muted); }
+
+/* ボタン */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 44px; padding: 10px 18px;
+  background: var(--navy-deep); color: #fff; text-decoration: none;
+  border-radius: var(--radius-s); font-weight: 700; font-size: .9375rem;
+}
+.theme-doc .btn:hover { background: var(--red); }
+
+/* 表 */
+.table-wrap { overflow-x: auto; margin: 16px 0; }
+table { width: 100%; border-collapse: collapse; font-size: .9375rem; }
+th, td { padding: 10px 8px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+thead th { font-size: .8125rem; color: var(--muted); font-weight: 700; border-bottom: 2px solid var(--navy); }
+td.c, th.c { text-align: center; }
+.yes { color: var(--navy); font-weight: 700; }
+.no { color: var(--muted); }
+
+/* 部則（開閉） */
+details.rule { border: 1px solid var(--line); border-radius: var(--radius-s); background: var(--surface); margin-bottom: 8px; }
+details.rule summary {
+  list-style: none; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  padding: 14px 16px; font-weight: 700;
+}
+details.rule summary::-webkit-details-marker { display: none; }
+details.rule summary::after { content: ''; width: 9px; height: 9px; border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: rotate(45deg); transition: transform .2s; flex: 0 0 auto; margin-top: -4px; }
+details.rule[open] summary::after { transform: rotate(-135deg); margin-top: 4px; }
+details.rule .rule-body { padding: 0 16px 16px; }
+details.rule h4 { font-size: .9375rem; margin: 14px 0 4px; color: var(--navy); }
+
+/* ロードマップ（指導者向け） */
+.roadmap { list-style: none; margin: 0; padding: 0; }
+.month { border-top: 1px solid var(--line); padding: 16px 0; }
+.month-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px; }
+.month-head b { font-family: var(--f-display); font-size: 1.25rem; color: var(--red); min-width: 3.2em; }
+.month-head span { font-weight: 700; }
+.grades { display: grid; gap: 6px; margin: 0; }
+.grades div { display: grid; grid-template-columns: 3.5em 1fr; gap: 8px; font-size: .9375rem; }
+.grades dt { font-weight: 700; color: var(--muted); }
+.grades dd { margin: 0; }
+.season-band { margin: 28px 0 4px; padding: 14px 16px; border-radius: var(--radius-s); background: var(--pool); }
+.season-band strong { font-size: 1.0625rem; }
+.season-band span { margin-left: 10px; font-weight: 700; color: var(--red); }
+.season-band p { margin: 6px 0 0; font-size: .9375rem; }
+
+/* 成長曲線 */
+.growth { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-s); padding: 12px; margin: 16px 0; }
+.growth svg { width: 100%; height: auto; display: block; }
+.growth-legend { list-style: none; display: grid; gap: 6px; margin: 12px 0 0; padding: 0; font-size: .9375rem; }
+.growth-legend b { color: var(--navy); margin-right: 6px; }
+
+/* フロー（指導者向け運用） */
+.flow { list-style: none; margin: 0 0 16px; padding: 0; counter-reset: f; }
+.flow li { counter-increment: f; display: grid; grid-template-columns: 30px 1fr; gap: 10px; padding: 10px 0; border-bottom: 1px dashed var(--line); }
+.flow li::before { content: counter(f); width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; background: var(--pool); color: var(--navy); font-weight: 700; font-size: .8125rem; }
+.flow strong { display: block; }
+
+/* プロフィール */
+.profile { margin: 16px 0 0; }
+.profile summary { cursor: pointer; font-weight: 700; color: var(--navy); }
+.profile dl { margin: 10px 0 0; }
+.profile dt { font-weight: 700; font-size: .875rem; color: var(--muted); margin-top: 10px; }
+.profile dd { margin: 0; }
+
+.doc-footer { border-top: 1px solid var(--line); padding: 24px var(--gutter) 48px; text-align: center; font-size: .8125rem; color: var(--muted); }
+
+@media (min-width: 900px) {
+  .doc-header { padding-top: 64px; padding-bottom: 40px; }
+}
+
+/* ==========================================================================
+   外向け（新歓・表彰）
+   ========================================================================== */
+.theme-landing {
+  --paper: #0A1D42;
+  --surface: #12295A;
+  --ink: #FFFFFF;
+  --muted: #AEBBD3;
+  --line: #24407A;
+  background: var(--paper);
+  color: var(--ink);
+}
+.landing-hero { padding: 56px var(--gutter) 32px; text-align: center; }
+.landing-hero .club { font-size: .875rem; color: var(--gold-soft); margin: 0 0 12px; letter-spacing: .08em; }
+.landing-hero h1 {
+  font-family: var(--f-display);
+  font-weight: 800;
+  font-size: clamp(2rem, 9vw, 3.5rem);
+  line-height: 1.25;
+  letter-spacing: .04em;
+}
+.landing-hero .lead { margin: 14px auto 0; max-width: 32rem; color: #D2DBEC; }
+.video { max-width: 860px; margin: 28px auto 0; aspect-ratio: 16 / 9; border-radius: var(--radius-m); overflow: hidden; background: #000; }
+.video iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+.l-section { max-width: 860px; margin: 0 auto; padding: 56px var(--gutter); }
+.l-section > h2 {
+  font-family: var(--f-display);
+  font-weight: 800;
+  font-size: clamp(1.5rem, 6vw, 2rem);
+  margin-bottom: 8px;
+}
+.l-section > .l-desc { color: var(--muted); margin-bottom: 28px; }
+.l-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.l-card { background: var(--surface); border-radius: var(--radius-m); padding: 20px; }
+.l-card h3 { font-size: 1.0625rem; margin: 0 0 6px; color: #fff; }
+.l-card i { font-size: 1.5rem; color: var(--gold-soft); margin-bottom: 12px; display: block; }
+.l-card p { margin: 0; color: #D2DBEC; font-size: .9375rem; }
+.l-card img { margin-top: 14px; border-radius: var(--radius-s); }
+
+.slogan { border-left: 4px solid var(--red); padding: 6px 0 6px 18px; margin: 0 0 28px; }
+.slogan p:first-child { font-family: var(--f-display); font-weight: 800; font-size: 1.375rem; line-height: 1.5; margin-bottom: 6px; }
+.slogan p + p { color: var(--muted); }
+
+.light-band { background: var(--pool, #E7EFF7); color: #18202E; border-radius: var(--radius-m); }
+.theme-landing .light-band { --pool: #E7EFF7; }
+.light-band > h2 { color: #0F2A5C; }
+.light-band > .l-desc { color: #586274; }
+.light-band img { margin: 0 auto; max-width: 500px; width: 100%; }
+
+.times { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.times li { background: var(--surface); border-radius: var(--radius-m); padding: 16px 18px; }
+.times span { display: block; font-size: .875rem; color: var(--gold-soft); }
+.times strong { display: block; font-size: 1.1875rem; }
+.times small { display: block; color: var(--muted); margin-top: 2px; }
+
+.theme-landing .seasons li { border-left-color: var(--line); }
+.theme-landing .season-head span { color: var(--gold-soft); }
+.theme-landing .seasons li:nth-child(3)::before { background: #fff; }
+.season-events { margin: 10px 0 0; padding: 12px 16px; background: var(--surface); border-radius: var(--radius-s); }
+.season-events ul { margin: 0; padding-left: 1.2em; }
+.season-events li { border: 0 !important; padding: 2px 0 !important; }
+.season-events li::before { display: none; }
+.season-events small { color: var(--muted); }
+
+.join-steps { list-style: none; margin: 0; padding: 0; counter-reset: j; display: grid; gap: 10px; }
+.join-steps li { counter-increment: j; display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; background: var(--surface); border-radius: var(--radius-m); padding: 14px 16px; }
+.join-steps li::before { content: counter(j); width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: var(--red); color: #fff; font-weight: 700; }
+.join-steps small { display: block; color: var(--muted); }
+.meet { margin-top: 24px; background: var(--red); border-radius: var(--radius-m); padding: 24px 20px; text-align: center; }
+.meet p { margin: 0; }
+.meet .meet-time { font-family: var(--f-display); font-weight: 800; font-size: 2rem; line-height: 1.3; margin: 6px 0; }
+
+.cta { text-align: center; padding: 24px var(--gutter) 72px; }
+.cta .btn-primary { display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 12px 32px; border-radius: 999px; background: #fff; color: var(--navy-deep); font-weight: 700; text-decoration: none; font-size: 1.0625rem; }
+.cta .btn-primary:hover { background: var(--gold-soft); }
+.cta .more { display: inline-block; margin-top: 28px; color: var(--muted); font-size: .9375rem; }
+.cta .more:hover { color: #fff; }
+
+.milestones { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.milestones li { background: var(--surface); border-left: 4px solid var(--red); border-radius: 0 var(--radius-m) var(--radius-m) 0; padding: 18px 20px; }
+.milestones h3 { color: var(--gold-soft); margin: 0 0 6px; font-size: 1.0625rem; }
+.milestones p { margin: 0; color: #D2DBEC; font-size: .9375rem; }
+.theme-doc .milestones li { border-left-color: var(--red); }
+.theme-doc .milestones h3 { color: var(--navy); }
+.theme-doc .milestones p { color: var(--ink); }
+
+.target { margin: 40px 0 0; text-align: center; padding: 28px 20px; border: 1px solid var(--line); border-radius: var(--radius-m); }
+.target strong { display: block; font-family: var(--f-display); font-size: 1.5rem; color: var(--gold-soft); margin-bottom: 6px; }
+.target p { margin: 0; color: #D2DBEC; }
+
+.theme-landing .award { background: var(--surface); border-color: var(--line); border-left-color: var(--gold-soft); }
+.theme-landing .award h3 { color: #fff; }
+.theme-landing .award > p { color: #D2DBEC; }
+.winners { list-style: none; margin: 14px 0 0; padding: 14px 0 0; border-top: 1px solid var(--line); display: grid; gap: 8px; }
+.winners li { background: rgba(0, 0, 0, .18); border-radius: var(--radius-s); padding: 12px 14px; }
+.w-year { color: var(--gold-soft); font-weight: 700; margin-right: 10px; }
+.w-name { font-weight: 700; font-size: 1.0625rem; }
+.winners p { margin: 6px 0 0; font-size: .9375rem; color: var(--muted); }
+.w-next { text-align: center; color: var(--muted); border: 1px dashed var(--line); background: transparent !important; font-size: .875rem; }
+
+.back { text-align: center; padding: 8px var(--gutter) 72px; }
+.back a { display: inline-block; padding: 12px 28px; border: 1px solid var(--line); border-radius: 999px; text-decoration: none; color: var(--muted); }
+.back a:hover { color: #fff; border-color: #fff; }
+.landing-foot { text-align: center; color: var(--muted); font-size: .8125rem; padding: 0 var(--gutter) 40px; }
+
+/* ---------- 動きの配慮・印刷 ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}
+@media print {
+  .tabs-wrap, .lane-rope { display: none; }
+  .panel[hidden] { display: block !important; }
+  .panel { page-break-before: always; }
+  .doc-header { background: none; color: #000; }
+  details.rule { break-inside: avoid; }
+  details.rule .rule-body { display: block; }
+}
+
+/* ---------- 仕上げ ---------- */
+.vision-text, .doc-title, .landing-hero h1, .slogan p:first-child, .meet-time { text-wrap: balance; }
+.award h3 small { margin-left: 8px; font-family: var(--f-body); font-weight: 500; font-size: .8125rem; color: var(--muted); }
+
+/* 部則 */
+.rulebook { display: grid; gap: 12px; }
+.rule-sec { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-s); padding: 16px 18px; }
+.rule-sec > h3 { display: flex; align-items: center; gap: 10px; margin: 0 0 8px !important; font-size: 1.125rem; }
+.rule-sec > h3 span { width: 26px; height: 26px; border-radius: 50%; display: inline-grid; place-items: center; background: var(--brand); color: #fff; font-size: .8125rem; }
+.rule-sec .bullets { margin-bottom: 0; }
+.rule-sec .flow { margin: 12px 0 0; padding-top: 4px; border-top: 1px solid var(--line); }
+.rule-sec .flow li { border-bottom: 0; }
+
+/* ---------- 絵文字と追加部品（2026/10 改訂） ---------- */
+.em { margin-right: .35em; font-style: normal; }
+.tools3 li { grid-template-columns: 44px 1fr; }
+.tool-em { font-size: 1.75rem; line-height: 1; padding-top: 4px; text-align: center; }
+
+/* 総監督はハイライトしない */
+.role-director dt { color: inherit; }
+.layers li:nth-child(3) { background: var(--surface); color: inherit; border-color: var(--line); }
+.layers li:nth-child(3) .layer-label { color: var(--muted); }
+
+/* RED / BLUE */
+.team { border-top: 4px solid var(--line); }
+.team-red { border-top-color: #C8102E; }
+.team-blue { border-top-color: #1F5FBF; }
+
+/* 日誌 */
+.note-diary { border-left-color: var(--red); }
+
+/* 連絡ツール：用件ごとの一覧 */
+.comm-desc { color: var(--muted); font-size: .9375rem; margin-bottom: 8px; }
+.comm-items { list-style: none; margin: 0; padding: 0; }
+.comm-items li { padding: 10px 0; border-top: 1px dashed var(--line); display: flex; flex-wrap: wrap; gap: 2px 14px; }
+.comm-items strong { flex: 1 0 100%; }
+.comm-items span { font-size: .875rem; color: var(--muted); }
+.comm-items b { font-weight: 700; color: var(--ink); margin-right: 6px; }
+.comm h3 small { margin-left: auto !important; }
+
+/* コンパクトな表（新歓の練習時間・1年間） */
+.spec { margin: 0; border-top: 1px solid var(--line); }
+.spec > div { display: grid; grid-template-columns: 7.5em 1fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+.spec dt { font-weight: 700; color: var(--gold-soft); }
+.theme-doc .spec dt { color: var(--navy); }
+.spec dd { margin: 0; }
+.spec dd strong { display: block; }
+.spec dd small { display: block; color: var(--muted); }
+.spec dd ul { margin: 4px 0 0; padding-left: 1.1em; color: #D2DBEC; font-size: .9375rem; }
+.spec dd ul li { margin: 2px 0; }
+.spec dd ul small { display: inline; margin-left: 4px; }
+
+/* 見出しの絵文字 */
+.panel h2 .em, .l-section > h2 .em { font-family: var(--f-body); }
+.level-5 dd strong { color: var(--red); margin-right: 4px; }
+.spec dt small { display: block; font-weight: 500; color: var(--muted); font-size: .8125rem; }
