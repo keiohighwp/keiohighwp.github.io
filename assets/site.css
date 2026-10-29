@@ -558,3 +558,19 @@ details.rule h4 { font-size: .9375rem; margin: 14px 0 4px; color: var(--navy); }
 .panel h2 .em, .l-section > h2 .em { font-family: var(--f-body); }
 .level-5 dd strong { color: var(--red); margin-right: 4px; }
 .spec dt small { display: block; font-weight: 500; color: var(--muted); font-size: .8125rem; }
+
+/* 新歓：1年間の流れ（スマホで1列に読めるタイムライン） */
+.year { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.year-s { background: var(--surface); border-radius: var(--radius-m); padding: 18px 18px 14px; border-left: 5px solid var(--red); }
+.year-2 { border-left-color: #4CAF7A; }
+.year-3 { border-left-color: #8EC5FF; }
+.year-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.year-em { font-size: 1.5rem; line-height: 1; }
+.year-head strong { font-family: var(--f-display); font-weight: 800; font-size: 1.375rem; }
+.year-months { margin-left: auto; font-size: .875rem; font-weight: 700; color: var(--gold-soft); background: rgba(255, 255, 255, .08); padding: 2px 10px; border-radius: 999px; }
+.year-lead { margin: 8px 0 10px; color: #D2DBEC; }
+.year-events { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.year-events li { padding: 9px 0; border-bottom: 1px solid var(--line); }
+.year-events li:last-child { border-bottom: 0; padding-bottom: 0; }
+.year-events b { display: block; font-weight: 700; }
+.year-events span { display: block; font-size: .8125rem; color: var(--muted); margin-top: 1px; }
