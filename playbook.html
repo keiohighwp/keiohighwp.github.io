@@ -152,14 +152,18 @@
         .next-btn { display: block; margin: 2.5rem auto 0; background: transparent; color: var(--sub); border: 2px solid var(--line); border-radius: 50px; padding: 0.7rem 1.8rem; font-weight: bold; font-size: 0.95rem; cursor: pointer; font-family: inherit; }
         .next-btn:hover { background: var(--line); color: #fff; }
         footer { text-align: center; padding: 2rem 1rem 3rem; color: var(--sub); font-size: 0.8rem; border-top: 1px solid var(--line); }
+        .warn { background: rgba(255,215,0,0.08); border: 2px solid var(--gold); border-radius: 8px; padding: 1.3rem 1.2rem; margin: 1.5rem 0 1rem; text-align: center; }
+        .warn p { margin: 0 0 0.8rem; font-size: 0.92rem; }
+        .warn p:last-child { margin-bottom: 0; }
+        .warn .warn-title { font-size: 1.15rem; font-weight: bold; color: var(--gold); line-height: 1.5; }
     </style>
 </head>
 <body>
 
 <header>
-    <span class="badge">部員専用・外部共有禁止</span>
+    <span class="badge">部員向け</span>
     <h1>新歓プレイブック</h1>
-    <p class="subtitle">自分たちを超える後輩を、自分たちの手で連れてくるために。</p>
+    <p class="subtitle">自分たちを超える後輩を、<br>自分たちの手で連れてくる</p>
 </header>
 
 <nav class="tabs" role="tablist">
@@ -174,39 +178,39 @@
 
 <!-- ==================== 01 総括 ==================== -->
 <section class="panel active" id="summary">
-    <h2>これまでの新歓、ひと言で言うと</h2>
-    <p class="lead">最初にこれだけは頭に入れておいてください。</p>
+    <h2>これまでの新歓</h2>
+    <p class="lead">まず、これだけ覚えておこう</p>
 
     <div class="verdict">
         <div class="verdict-row">
             <div class="verdict-mark mark-x">✕</div>
             <div>
                 <h4>2年前：準備が間に合わなかった</h4>
-                <p>教室が取れない、ビラの許可が下りない。スタートラインに立つ前につまずいた。</p>
+                <p>教室が取れない<br>ビラの許可が下りない</p>
             </div>
         </div>
         <div class="verdict-row">
             <div class="verdict-mark mark-o">○</div>
             <div>
                 <h4>今年：準備は例年以上</h4>
-                <p>動画・ビラ・スライド・ウェブ・ストーリー・教室イベントまで、3月中にほぼそろった。</p>
+                <p>動画・ビラ・スライド・ウェブ・ストーリー<br>3月中にほぼそろった</p>
             </div>
         </div>
         <div class="verdict-row">
             <div class="verdict-mark mark-x">✕</div>
             <div>
-                <h4>今年：仮入部期間で半分を失った</h4>
-                <p>仮入部12人 → 本入部6人。平日練習で新入生への対応が手薄になり、「きつい部活」という印象だけが残った。</p>
+                <h4>今年：本入部は6人にとどまった</h4>
+                <p>仮入部12人 → 本入部6人<br>「きつい部活」という印象が残ってしまった</p>
             </div>
         </div>
     </div>
 
     <div class="big-statement">
-        準備が間に合うのは<span>最低ライン</span>。間に合わないのは論外。<br>
-        勝負は<span>仮入部期間</span>で決まる。
+        準備が間に合うのは<span>最低ライン</span><br>
+        勝負は<span>仮入部期間</span>で決まる
     </div>
 
-    <h3>目標人数：10人（下限7・上限14）</h3>
+    <h3>目標人数：10人</h3>
     <div class="bars">
         <div class="bar-col"><div class="bar-val" style="color:#ff6b7f;">6<small>人</small></div><div class="bar actual" style="height: 38%;"></div></div>
         <div class="bar-col"><div class="bar-val">7<small>人</small></div><div class="bar" style="height: 44%;"></div></div>
@@ -216,16 +220,16 @@
     <div class="bar-labels">
         <div>今年<span>実績</span></div>
         <div>下限<span>試合に出られる</span></div>
-        <div style="color:var(--gold);">目標<span>現実的な目標</span></div>
+        <div style="color:var(--gold);">目標<span>ここを狙う</span></div>
         <div>上限<span>2チーム作れる</span></div>
     </div>
-    <p class="gap-note">目標まで、あと4人足りなかった</p>
+    <p class="gap-note">目標まで、あと4人</p>
     <ul>
-        <li><strong>下限 7人</strong>：1世代で試合に出られる最低人数。</li>
-        <li><strong>上限 14人</strong>：1世代で2チーム作れる理想の人数。これ以上は管理が回らない。</li>
-        <li><strong>目標 10人</strong>：その間を取った現実的な目標。今年の6人は下限にも届いていない。</li>
+        <li><strong>下限 7人</strong>：試合に出られる最低人数</li>
+        <li><strong>上限 14人</strong>：1世代で2チーム作れる人数</li>
+        <li><strong>目標 10人</strong>：その間、現実的なライン</li>
     </ul>
-    <p class="note">※ 今年入部した6人は本当に優秀です。足りなかったのは質ではなく人数。だからこそ、同じ質のまま数を取りにいく。</p>
+    <p class="note">一緒に戦う仲間を、もっと増やしたい</p>
 
     <button class="next-btn" data-go="funnel">次：どこで減ったか ▶</button>
 </section>
@@ -233,17 +237,17 @@
 <!-- ==================== 02 ファネル ==================== -->
 <section class="panel" id="funnel">
     <h2>どこで減ったか</h2>
-    <p class="lead">新入生がビラを見てから本入部するまでの5段階。どこが細くなっているかを見てください。</p>
+    <p class="lead">ビラを見てから本入部までの5段階<br>細くなっているところを見よう</p>
 
     <div class="funnel">
         <div class="f-step">
             <div class="f-bar unknown" style="width: 100%;"><span class="f-name">① 認知</span><span class="f-val">未計測</span></div>
-            <div class="f-media">ビラ（約400部）・教室説明会・教室掲示ポスター・PV</div>
+            <div class="f-media">ビラ・教室説明会・ポスター・PV</div>
         </div>
         <div class="f-arrow">▼</div>
         <div class="f-step">
             <div class="f-bar unknown" style="width: 86%;"><span class="f-name">② 興味</span><span class="f-val">未計測</span></div>
-            <div class="f-media">ウェブ・Instagram（投稿・ストーリー）</div>
+            <div class="f-media">ウェブ・Instagram</div>
         </div>
         <div class="f-arrow">▼</div>
         <div class="f-step">
@@ -253,7 +257,7 @@
         <div class="f-step">
             <div class="f-bar known" style="width: 58%;"><span class="f-name">④ 仮入部</span><span class="f-val">12人</span></div>
         </div>
-        <div class="f-arrow pinch">▼ 継続率 <b>50%</b>（−6人）← ここが一番細い</div>
+        <div class="f-arrow pinch">▼ 継続率 <b>50%</b>（−6人）← ここ</div>
         <div class="f-step">
             <div class="f-bar lost" style="width: 30%;"><span class="f-name">⑤ 本入部</span><span class="f-val">6人</span></div>
         </div>
@@ -261,26 +265,25 @@
 
     <h3>読み取れること</h3>
     <div class="box red">
-        <h4>仮入部 → 本入部で、半分が抜けた</h4>
-        <p>見学から仮入部へは8割が進んでいて、入口はうまくいっている。問題は仮入部した後。4月20日の時点では「確定4人、最終8人くらい」と見込んでいたが、実際は6人だった。<strong>「来てくれている＝入ってくれる」ではない。</strong></p>
+        <h4>仮入部 → 本入部で、半分になった</h4>
+        <p>入口は8割通過、うまくいっている<br>問題は仮入部のあと<br>「最終8人」の見込みが、実際は6人<br><strong>来てくれている ≠ 入ってくれる</strong></p>
     </div>
     <div class="box">
-        <h4>10人に届かせるには、どちらかが必要</h4>
+        <h4>10人に届かせるには</h4>
         <ul>
-            <li>今の継続率のまま、見学者を <strong>約25人</strong> に増やす（入口を広げる）</li>
-            <li>見学者15人のまま、仮入部からの継続率を <strong>50% → 83%</strong> に上げる（出口を締める）</li>
+            <li>見学者を <strong>約25人</strong> に増やす（入口を広げる）</li>
+            <li>または、仮入部からの継続率を <strong>50% → 83%</strong> に（出口を締める）</li>
         </ul>
-        <p>入口を広げるのは大変だが、出口を締めるのは<span class="em">自分たちの練習の中でできる</span>。まずはここから。</p>
+        <p>出口を締めるのは、<br><span class="em">自分たちの練習の中でできる</span><br>まずはここから</p>
     </div>
     <div class="box deep">
-        <h4>①と②が未計測なのは来年の宿題</h4>
-        <p>どこで減っているかを正しく見るために、来年は次の数字も記録する。</p>
+        <h4>来年の宿題：①②も数える</h4>
         <ul class="check">
             <li>配ったビラの枚数</li>
-            <li>教室説明会に来た人数（回ごと）</li>
-            <li>見学に来た人の「何を見て来たか」（ビラ／ウェブ／インスタ／教室／友達）</li>
+            <li>教室説明会の人数（回ごと）</li>
+            <li>見学者が「何を見て来たか」</li>
             <li>見学・仮入部・本入部の人数（毎週）</li>
-            <li>一人ひとりの来た回数と、最後に来た日</li>
+            <li>一人ひとりの来た回数、最後に来た日</li>
         </ul>
     </div>
 
@@ -290,114 +293,118 @@
 <!-- ==================== 03 メッセージ ==================== -->
 <section class="panel" id="message">
     <h2>君たちへのメッセージ</h2>
-    <p class="lead">新歓をやる理由。ここがぶれると、全部がぶれる。</p>
+    <p class="lead">新歓をやる理由<br>ここがぶれると、全部ぶれる</p>
 
     <div class="slogan">
-        <p class="q">「最新のチームが、最良のチームである」</p>
-        <p class="note" style="margin:0;">慶應水球部のスローガン</p>
+        <p class="q">最新の塾高が、」</p>
+       <p class="q">最良の塾高である」</p>
+        <p class="note" style="margin:0;">慶應高校水球部のスローガン</p>
     </div>
 
-    <p>このスローガンは、「今のチームが一番強い」という意味ではありません。<strong>毎年、前の世代を超えるチームでなければならない</strong>という約束です。</p>
-    <p>つまり、<span class="em">君たちを超える後輩を見つけて連れてくるのは、今の世代である君たちの責任</span>です。</p>
+    <p>「今が一番強い」という意味じゃない<br><strong>毎年、前の世代を超え続ける</strong>という約束</p>
+    <p>だから、<br><span class="em">君たちを超える後輩を連れてくるのは、<br>今の世代の責任</span></p>
 
     <div class="box gold">
-        <h4>「自分より優秀な人を採れ」</h4>
-        <p>Googleには「常に自分より優秀な人を採用しろ」という考え方があります。自分より下の人を採り続ければ、組織は少しずつ弱くなる。自分を超える人を採り続ければ、組織は勝手に強くなる。</p>
-        <p>新歓も同じです。<strong>「入ってくれる人」ではなく、「自分たちを超える逸材」を探し出して、口説き落としてきてください。</strong></p>
+        <h4>新しい世代が、チームを強くする</h4>
+        <p>自分たちを超える仲間が加わるたびに、<br>チームは強くなる</p>
+        <p><strong>自分たちを超える仲間に、<br>自分から声をかけよう</strong></p>
     </div>
 
     <h3>だから、優先順位が変わる</h3>
     <div class="chain">
-        <div class="chain-item"><span class="k">STEP 1</span>最新のチームが、最良のチームでなければならない</div>
+        <div class="chain-item"><span class="k">STEP 1</span>最新のチームが、最良のチームであるために</div>
         <div class="chain-arrow">▼</div>
-        <div class="chain-item"><span class="k">STEP 2</span>そのためには、自分たちを超える後輩が必要</div>
+        <div class="chain-item"><span class="k">STEP 2</span>自分たちを超える後輩が必要</div>
         <div class="chain-arrow">▼</div>
-        <div class="chain-item"><span class="k">STEP 3</span>逸材は、仮入部期間に「ここに入りたい」と思わなければ来ない</div>
+        <div class="chain-item"><span class="k">STEP 3</span>仮入部期間に「入りたい」と思ってもらえなければ、仲間は増えない</div>
         <div class="chain-arrow">▼</div>
-        <div class="chain-item" style="border:1px solid var(--red);"><span class="k">STEP 4</span><strong>仮入部期間は、自分の練習より新入生を優先する時間</strong></div>
+        <div class="chain-item" style="border:1px solid var(--red);"><span class="k">STEP 4</span><strong>仮入部期間は、自分の練習より新入生が優先</strong></div>
     </div>
-    <p>4月の数週間、自分のスイム練習が少し減ったとしても、自分を超える後輩が1人入る方が、チームにとってはるかに大きい。今年はこの重みづけを間違えました。</p>
+    <p>新入生と過ごす時間は、<br>チームの未来への投資</p>
 
-    <h3>狙う「原石」の条件</h3>
-    <p>来るもの拒まずが基本。でも、誰でもいいわけではない。「今年みっちり追い込んだ自分たちを、最短で追い越せそうなのはどんな人か？」という視点で探す。</p>
-    <div class="table-wrap">
-        <table>
-            <tr><th>観点</th><th>条件</th><th>補足</th></tr>
-            <tr><td><strong>フィジカル・競技歴</strong></td><td>チームスポーツ・コンタクトスポーツの経験者<br>本気のスイマー<br>体が大きい</td><td>水泳未経験でも、ラグビー・バスケ・サッカーなどの経験者は適性が高い。水泳経験者なら「本気で1秒を削ろうとした経験」がある人</td></tr>
-            <tr><td><strong>メンタル</strong></td><td>ナイスガイ（いいやつ）</td><td>どれだけ能力が高くても、チームのために動けない人はプラスよりマイナスの方が大きい</td></tr>
-            <tr><td><strong>知性</strong></td><td>成績が良い</td><td>気合と根性だけでは足りない。自分の頭で考える力は成績の良さと相関がある。見た目ではわからないので、話して探す</td></tr>
-        </table>
+    <div class="box red">
+        <h4>🔥 練習は、時間で分ける</h4>
+        <p>新入生がいる時間は、新入生と一緒に楽しめるメニュー<br>新入生がいない時間は、自分たちを鍛えるメニュー<br><strong>練習時間はそのまま、中身を分けるだけ</strong></p>
     </div>
-    <p class="note">※ この条件は部員の中だけで使うもの。新入生本人に向かって言わないこと。</p>
 
-    <button class="next-btn" data-go="trial">次：仮入部期間 ▶</button>
-</section>
+    <h3>水球に向いている人の特徴</h3>
+    <p>誰でも歓迎が大前提<br>そのうえで、こんな子には水球の魅力をしっかり伝えよう</p>
+    <div class="box">
+        <ul>
+            <li><strong>チームスポーツの経験がある人</strong><br>ラグビー・バスケ・サッカーなどの経験は、水球でも活きる</li>
+            <li><strong>水泳を頑張ってきた人</strong><br>タイムに本気で向き合った経験は大きな武器</li>
+            <li><strong>体格を活かしたい人</strong></li>
+            <li><strong>仲間のために動ける人</strong></li>
+            <li><strong>自分で考えるのが好きな人</strong><br>水球は頭を使うスポーツ</li>
+        </ul>
+    </div>
 
 <!-- ==================== 04 仮入部期間 ==================== -->
 <section class="panel" id="trial">
-    <h2>仮入部期間のコンテンツ</h2>
-    <p class="lead">一番細くなったのはここ。体験日だけでなく、平日練習まで設計する。</p>
+    <h2>仮入部期間</h2>
+    <p class="lead">今年の重点ポイントはここ<br>体験だけじゃなく、練習全体を設計する</p>
 
     <h3>今年うまくいかなかったこと</h3>
     <div class="box red">
         <ul>
-            <li>部員のスイム練習やサーキット練習の割合が増えて、シュート練習の時間が減った</li>
-            <li>赤台を使ったメインプールでのシュート練習をほとんどできず、新入生をダイビングプールの練習に偏らせた</li>
-            <li>スイム中心の練習を見て、「きつい部活」という印象が強く残り、最後まで拭えなかった</li>
-            <li>平日練習での新入生への対応が、当日のイベントに比べて手薄だった</li>
+            <li>スイム・サーキットが増えて、シュート練習が減った</li>
+            <li>メインプール（赤台）でのシュート練習がほぼできず、新入生はダイビングプールに偏った</li>
+            <li>「きつい部活」の印象が前に出過ぎた</li>
+            <li>当日イベントに比べ、平日の対応が手薄だった</li>
         </ul>
     </div>
 
-    <h3>体験のねらい（4つ）</h3>
+    <h3>体験のねらい</h3>
     <ol>
-        <li><strong>心理的なハードルを下げる</strong>：「これなら自分もいけるかも」と思わせる</li>
-        <li><strong>水球のすごさと楽しさを体感させる</strong></li>
-        <li><strong>部の雰囲気（カルチャー）を伝える</strong></li>
-        <li><strong>基礎技術を知ってもらう</strong>：例年どおりパス・シュート・巻き足の講座もやる</li>
+        <li><strong>ハードルを下げる</strong>：「自分もいけるかも」</li>
+        <li><strong>すごさと楽しさを体感させる</strong></li>
+        <li><strong>部の雰囲気を伝える</strong></li>
+        <li><strong>基礎技術を知ってもらう</strong>：パス・シュート・巻き足講座</li>
     </ol>
 
-    <h3>体験メニュー：3段階のレベル設計</h3>
-    <p>来てくれた回数に応じてレベルを上げていく。2回目に来た子にはLv.2、3回目以降はLv.3、というように段階的に出す。</p>
+    <h3>体験メニュー：3段階</h3>
+    <p>来た回数に応じてレベルを上げる<br>2回目はLv.2、3回目以降はLv.3</p>
 
     <div class="lv l1">
         <div class="lv-head"><span class="lv-tag">Lv.1</span><span class="lv-title">接触：水中でボール遊び</span></div>
         <div class="lv-feel">「これならできそう」（勘違いでいい）</div>
-        <p style="margin:0;">小さいボールも用意して、単純なパス・シュート・バウンドシュート・水面を滑らせるパスくらいまでを体験。ゲーム性を重視して、浮力と水に慣れてもらう。陸上で小さいボールを投げてもらうのも効果的。</p>
+        <p style="margin:0;">小さいボールで、パス・シュート・バウンドシュート・滑らせるパス<br>ゲーム性重視、浮力と水に慣れる<br>陸で小さいボールを投げるのも◎</p>
         <span class="lv-point">POINT：物足りないくらいで帰す</span>
     </div>
     <div class="lv l2">
         <div class="lv-head"><span class="lv-tag">Lv.2</span><span class="lv-title">洗礼：巻き足講座＋重りリレー</span></div>
-        <div class="lv-feel">「水球部員、人間じゃない」（驚き）</div>
-        <p style="margin:0;">新入生は適切な重さのおもりを持って、何人がかりでも、底を歩いてもいいので移動。3年生はもっと重いおもりを持って立ち泳ぎで移動。それぞれリレー形式で勝負する。息止め対決や、部員の巻き足に全力で乗っかってもらう（部員は耐える）のも盛り上がる。</p>
-        <span class="lv-point">POINT：きついので、疲れる前に帰す</span>
+        <div class="lv-feel">「水球部員ってすごい」（驚き）</div>
+        <p style="margin:0;">新入生：おもりを持って、何人がかりでも、底を歩いてもOK<br>3年生：もっと重いおもりで立ち泳ぎ<br>リレーで勝負<br>部員の巻き足に乗っかる体験も</p>
+        <span class="lv-point">POINT：疲れる前に帰す</span><br>
+        <span class="lv-point">安全：新入生のそばには必ず部員がつく</span>
     </div>
     <div class="lv l3">
         <div class="lv-head"><span class="lv-tag">Lv.3</span><span class="lv-title">挑戦：制限おにごっこ／水中ポートボール</span></div>
-        <div class="lv-feel">「エグいけど、悔しい」（熱中）</div>
-        <p style="margin:0;"><strong>制限おにごっこ</strong>：3年生が鬼、新入生が逃げる。鬼はボールを持っている時だけタッチできる。<br><strong>水中ポートボール</strong>：あえて人数が集まらないとできない競技にして、リピーターが2人目・3人目の友達を誘ってくる仕掛けにする。<br>どちらも2コース分くらいのスペースでフィールドを作る。技術の習得、対人の感覚、競技としての面白さを理解してもらう。</p>
+        <div class="lv-feel">「難しいけど、もっとやりたい」（熱中）</div>
+        <p style="margin:0;"><strong>制限おにごっこ</strong>：3年生が鬼、ボールを持っている時だけタッチできる<br><strong>水中ポートボール</strong>：人数が集まらないとできない競技、友達を誘ってもらう仕掛け<br>2コース分くらいでフィールドを作る</p>
     </div>
 
-    <h3>平日練習での対応（来年への提案）</h3>
-    <p class="note" style="margin-bottom:0.8rem;">今年の振り返りをもとにした案。幹部で話し合って決めること。</p>
+    <h3>平日練習での対応（提案）</h3>
+    <p class="note" style="margin-bottom:0.8rem;">幹部で話し合って決めること</p>
     <div class="box">
         <ul class="check">
-            <li><strong>新入生1人に担当部員を1人つける</strong>（バディ制）。名前を覚える、毎回声をかける、帰り際に「次いつ来る？」と聞くのは担当の仕事</li>
-            <li><strong>メインプールでのシュート練習を毎回必ず入れる</strong>。新入生をダイビングプールに置きっぱなしにしない</li>
-            <li><strong>仮入部期間はスイム・サーキットの割合に上限を決める</strong>。新入生に部員と同じメニューを全部はやらせない</li>
-            <li><strong>「楽しかった」で帰す</strong>。最後の10分はゲームで終える</li>
-            <li><strong>毎週、一人ひとりの来た回数と最後に来た日を確認する</strong>。来なくなりそうな子には担当から連絡</li>
-            <li><strong>見込み人数は「確定」と「迷っている」を分けて報告する</strong>（今年は「最終8人」の見込みが6人になった）</li>
-            <li><strong>締切を伝える前に、迷っている子と1対1で話す</strong>。締切の後から人を集めるのは難しい</li>
+            <li><strong>新入生1人に担当1人（バディ）</strong><br>名前を覚える、毎回声をかける、「次いつ来る？」</li>
+            <li><strong>メインプールでのシュート練習を毎回</strong><br>ダイビングプールに置きっぱなしにしない</li>
+            <li><strong>スイム・サーキットに上限</strong><br>部員と同じメニューを全部やらせない</li>
+            <li><strong>「楽しかった」で帰す</strong><br>最後の10分はゲーム</li>
+            <li><strong>毎週、来た回数と最後に来た日を確認</strong><br>来なくなりそうな子には担当から連絡</li>
+            <li><strong>見込みは「確定」と「迷っている」に分けて報告</strong></li>
+            <li><strong>締切の前に、迷っている子と1対1で話す</strong></li>
         </ul>
     </div>
 
     <h3>内部進学ルート（普通部・中等部の水泳部）</h3>
     <div class="box deep">
         <ul>
-            <li>普通部水泳部からは例年2名ほど入部していたが、近年は外部クラブの子がそのまま競泳部に流れ、昨年はゼロ。今年は合宿に顔を出して直接勧誘したが、結果は例年どおり</li>
-            <li>中等部水泳部から塾高に上がったのは2名で、2人とも競泳部に入った</li>
-            <li>直接勧誘ができたのは、たまたまタイミングが合った部員がいたから。<strong>担当を決めて、仕組みとしてやる</strong></li>
-            <li>水泳部に「水球の楽しさ」が伝わっていない可能性がある。泳げることより、チームで戦う面白さを伝える</li>
+            <li>普通部水泳部から例年2名ほど、昨年はゼロ<br>外部クラブの子は競泳部を選ぶことが多い</li>
+            <li>中等部水泳部からの2名は、競泳部を選んだ</li>
+            <li>声かけは、タイミングの合った部員が行けた年だけ<br><strong>担当を決めて、仕組みにする</strong></li>
+            <li>泳げることより、チームで戦う面白さを伝える</li>
         </ul>
     </div>
 
@@ -407,16 +414,15 @@
 <!-- ==================== 05 スケジュール ==================== -->
 <section class="panel" id="prep">
     <h2>スケジュール</h2>
-    <p class="lead">準備は間に合って当たり前。タップすると中身が開きます。<span class="em">●金色</span>は落とすと致命的な締切。</p>
+    <p class="lead">タップで中身が開く<br><span class="em">●金色</span>は落とすと致命的な締切</p>
 
     <div class="sched">
         <details class="acc sched-item">
-            <summary><span class="when-tag">8月</span><span class="sum-main">引き継ぎ・次のリーダー決め<span class="chips"><span class="chip">リーダー</span></span></span></summary>
+            <summary><span class="when-tag">8月</span><span class="sum-main">引き継ぎ・キックオフ<span class="chips"><span class="chip">リーダー</span></span></span></summary>
             <div class="acc-body">
                 <ul class="check">
-                    <li>このページを全員で読む</li>
-                    <li>次の新歓リーダーを決める</li>
-                    <li>前任者と直接話す（Discordのメモだけで済ませない）</li>
+                    <li>このページを全員で読む</li>   
+                    <li>前任者と直接話す</li>
                 </ul>
             </div>
         </details>
@@ -424,19 +430,19 @@
             <summary><span class="when-tag">2月</span><span class="sum-main">方向性・担当・期限を決める<span class="chips"><span class="chip">リーダー</span><span class="chip hot">締切</span></span></span></summary>
             <div class="acc-body">
                 <ul class="check">
-                    <li>目標人数を決める（下限7・目標10・上限14）</li>
-                    <li>担当を割り振る（→ 06 担当とノウハウ）</li>
-                    <li><strong>全タスクに期限を書いた一覧を作る</strong></li>
-                    <li>前年の制作物（動画・スライド・ビラ）の元データがあるか確認</li>
+                    <li>目標人数を決める</li>
+                    <li>担当を割り振る（→ 06）</li>
+                    <li><strong>全タスクに期限を書く</strong></li>
+                    <li>前年の元データがあるか確認</li>
                 </ul>
             </div>
         </details>
         <details class="acc sched-item key">
             <summary><span class="when-tag">3月上旬</span><span class="sum-main">教室の確保・ビラの許可申請<span class="chips"><span class="chip">主務</span><span class="chip hot">締切</span></span></span></summary>
             <div class="acc-body">
-                <p>2年前はここで失敗して、準備が間に合わなかった。最優先で動く。</p>
+                <p>2年前はここでつまずいた<br>最優先で動く</p>
                 <ul class="check">
-                    <li>教室説明会の教室を生徒会に申請</li>
+                    <li>教室説明会の教室を申請</li>
                     <li>ビラ配り・ポスター掲示の許可を申請</li>
                 </ul>
             </div>
@@ -444,30 +450,30 @@
         <details class="acc sched-item key">
             <summary><span class="when-tag">3月中旬</span><span class="sum-main">ウェブのURLを確定・QR作成<span class="chips"><span class="chip">リーダー</span><span class="chip">ビラ</span><span class="chip hot">締切</span></span></span></summary>
             <div class="acc-body">
-                <p>今年は印刷の後でURLが変わり、ポスターを差し替えられなかった。<strong>URLを確定してからQRを作る。</strong></p>
+                <p>今年は印刷後にURLが変わって、差し替えられなかった<br><strong>URLを確定してから、QRを作る</strong></p>
             </div>
         </details>
         <details class="acc sched-item key">
             <summary><span class="when-tag">3月下旬</span><span class="sum-main">制作物を全部完成させる<span class="chips"><span class="chip">動画</span><span class="chip">ビラ</span><span class="chip">スライド</span><span class="chip hot">締切</span></span></span></summary>
             <div class="acc-body">
                 <ul class="check">
-                    <li>動画（長尺・投稿用・ショート版）完成</li>
+                    <li>動画3種類</li>
                     <li>ビラ印刷（ハガキ約400部）</li>
-                    <li>教室掲示ポスターを生徒会へ提出</li>
+                    <li>ポスターを生徒会へ提出</li>
                     <li>スライド完成・教室の機材確認</li>
-                    <li>段ボール看板の制作</li>
-                    <li>Instagramのプロフィールにウェブのリンク</li>
+                    <li>段ボール看板</li>
+                    <li>インスタのプロフィールにウェブのリンク</li>
                 </ul>
             </div>
         </details>
         <details class="acc sched-item key">
-            <summary><span class="when-tag">4月直前</span><span class="sum-main">体験メニュー・仮入部期間の練習を決める<span class="chips"><span class="chip">リーダー</span><span class="chip">幹部</span><span class="chip hot">締切</span></span></span></summary>
+            <summary><span class="when-tag">4月直前</span><span class="sum-main">体験メニュー・平日練習を決める<span class="chips"><span class="chip">リーダー</span><span class="chip">幹部</span><span class="chip hot">締切</span></span></span></summary>
             <div class="acc-body">
-                <p>今年いちばん足りなかったところ。体験日だけでなく、平日練習まで決めておく（→ 04 仮入部期間）。</p>
+                <p>今年いちばん足りなかったところ（→ 04）</p>
                 <ul class="check">
                     <li>体験メニュー Lv.1〜3</li>
-                    <li>仮入部期間の平日練習メニュー（シュート練習・スイムの上限）</li>
-                    <li>バディの割り振り方</li>
+                    <li>仮入部期間の平日練習メニュー</li>
+                    <li>バディの割り振り</li>
                 </ul>
             </div>
         </details>
@@ -475,29 +481,29 @@
             <summary><span class="when-tag">4月</span><span class="sum-main">新歓本番<span class="chips"><span class="chip">全員</span></span></span></summary>
             <div class="acc-body">
                 <ul class="check">
-                    <li>教室説明会・ビラ配り（当日は約300枚）</li>
+                    <li>教室説明会・ビラ配り（約300枚）</li>
                     <li>ストーリー投稿（毎日12時ごろ）</li>
                     <li>月火水金15:00、協生館正面玄関前で看板を持って待つ</li>
-                    <li>毎週、見学・仮入部・本入部の人数と、一人ひとりの来た回数を記録</li>
+                    <li>毎週、人数と一人ひとりの来た回数を記録</li>
                 </ul>
             </div>
         </details>
         <details class="acc sched-item">
             <summary><span class="when-tag">4月中旬</span><span class="sum-main">数字を報告<span class="chips"><span class="chip">リーダー</span></span></span></summary>
             <div class="acc-body">
-                <p>見学・仮入部・本入部の人数を、<strong>「確定」と「迷っている」に分けて</strong>報告する。今年は「最終8人」の見込みが6人だった。</p>
+                <p><strong>「確定」と「迷っている」に分けて</strong>報告</p>
             </div>
         </details>
         <details class="acc sched-item key">
             <summary><span class="when-tag">締切前</span><span class="sum-main">迷っている子と1対1で話す<span class="chips"><span class="chip">バディ</span><span class="chip hot">締切</span></span></span></summary>
             <div class="acc-body">
-                <p>締切を伝えた後から人を集めるのは難しい。目標に届いていなければ、締切の前に動く。</p>
+                <p>締切のあとから集めるのは難しい<br>届いていなければ、締切の前に動く</p>
             </div>
         </details>
         <details class="acc sched-item">
             <summary><span class="when-tag">5月</span><span class="sum-main">振り返り・このページに追記<span class="chips"><span class="chip">リーダー</span></span></span></summary>
             <div class="acc-body">
-                <p>数字（02のファネル）と、うまくいかなかったこと（07）を更新する。</p>
+                <p>02の数字と07のトラブルを更新</p>
             </div>
         </details>
     </div>
@@ -508,34 +514,34 @@
 <!-- ==================== 06 担当とノウハウ ==================== -->
 <section class="panel" id="kit">
     <h2>担当とノウハウ</h2>
-    <p class="lead">自分の担当だけ開けばOK。</p>
+    <p class="lead">自分の担当だけ開けばOK</p>
 
     <div class="box deep">
         <h4>全員が知っておく導線</h4>
         <div class="flow" style="margin:0.5rem 0 0.6rem;">
             <span>ビラ</span><i>→</i><span class="hl">ウェブ</span><i>→（教室）→</i><span>体験</span><i>→</i><span>仮入部</span><i>→</i><span>本入部</span>
         </div>
-        <p class="note" style="margin:0;">すべての制作物の出口はウェブかインスタ。教室に来なくても体験には来られるようにする。インスタはウェブを見た後の後押し。</p>
+        <p class="note" style="margin:0;">出口はすべてウェブかインスタ<br>教室に来なくても、体験には来られるように</p>
     </div>
 
     <details class="acc">
-        <summary><span class="icon">🧭</span><span class="sum-main">新歓リーダー<small class="note">取りまとめ・体験メニュー・Instagram・ウェブ</small></span></summary>
+        <summary><span class="icon">🧭</span><span class="sum-main">新歓リーダー<small class="note">取りまとめ・体験メニュー・インスタ・ウェブ</small></span></summary>
         <div class="acc-body">
             <h5>やること</h5>
             <ul>
-                <li>2月に方向性・目標人数・担当・期限を決める</li>
-                <li>4月直前に体験メニューと仮入部期間の練習を決める</li>
-                <li>新歓期間は毎日12時ごろにストーリーを投稿</li>
-                <li>毎週の人数を記録して、4月中旬に報告</li>
+                <li>2月：方向性・目標・担当・期限を決める</li>
+                <li>4月直前：体験メニューと平日練習を決める</li>
+                <li>新歓期間：毎日12時ごろストーリー投稿</li>
+                <li>毎週人数を記録、4月中旬に報告</li>
             </ul>
             <h5>ノウハウ</h5>
             <ul>
-                <li>全タスクに期限を書く。期限がないと進みが見えない</li>
-                <li>ストーリーに入れること：日時、見学・体験ができること、体験には仮入部届が必要なこと、集合時間と場所、何が体験できるか</li>
-                <li>文は体言止めで統一、背景はかっこいい写真</li>
-                <li>投稿にはURLを載せられないので、プロフィールにウェブのURLを置く</li>
-                <li>ウェブは完成度より公開を優先。URLは一度刷ったら変えない</li>
-                <li>早慶戦が4月にある年は、新歓で一緒に宣伝できる</li>
+                <li>全タスクに期限を書く</li>
+                <li>ストーリーに入れるもの：日時、見学・体験OK、仮入部届が必要、集合時間と場所、何が体験できるか</li>
+                <li>体言止めで統一、背景はかっこいい写真</li>
+                <li>投稿にURLは載せられない、プロフィールに置く</li>
+                <li>ウェブは完成度より公開優先、URLは変えない</li>
+                <li>早慶戦が4月の年は、一緒に宣伝</li>
             </ul>
             <details class="acc inner">
                 <summary>投稿文の例（2026年）</summary>
@@ -554,13 +560,13 @@
         <div class="acc-body">
             <h5>やること</h5>
             <ul>
-                <li>3月上旬までに、教室説明会の教室を生徒会に申請</li>
-                <li>ビラ配り・ポスター掲示の許可を申請し、ポスターを提出</li>
+                <li>3月上旬までに教室を申請</li>
+                <li>ビラ・ポスターの許可を申請、ポスター提出</li>
             </ul>
             <h5>ノウハウ</h5>
             <ul>
-                <li>2年前は教室が取れず、ビラの許可も下りなかった。最初の仕事にする</li>
-                <li>生徒会に提出した後は差し替えが難しい。中身（特にQR）を確定させてから出す</li>
+                <li>2年前はここでつまずいた、最初にやる</li>
+                <li>提出後は差し替え困難、QRを確定してから出す</li>
             </ul>
         </div>
     </details>
@@ -570,14 +576,14 @@
         <div class="acc-body">
             <h5>やること</h5>
             <ul>
-                <li>長尺版・投稿用・ショート版（ウェブ・教室用）を3月中に完成</li>
+                <li>長尺・投稿用・ショート版を3月中に完成</li>
             </ul>
             <h5>ノウハウ</h5>
             <ul>
-                <li>最後に「練習見学受付中！詳細はInstagram（@KEIOHIGH_WP）へ」などの案内とQRを数秒出す</li>
-                <li>本気度：筋トレの場面、コーチの指導を受ける真剣な表情</li>
-                <li>リアルさ：ホイッスル・水しぶき・掛け声をBGMの裏に少し混ぜる</li>
-                <li>学年ごとの人数など毎年変わる部分がある。元データは共有ドライブにも保存</li>
+                <li>最後にインスタ案内とQRを数秒</li>
+                <li>本気度：筋トレ、コーチの指導、真剣な表情</li>
+                <li>リアルさ：ホイッスル・水しぶき・掛け声をBGMの裏に</li>
+                <li>元データは共有ドライブにも保存</li>
             </ul>
             <h5>素材</h5>
             <div class="resource"><span>ショート版（ウェブ・教室用）</span><a href="https://youtu.be/yg0eR4TH6O0" target="_blank">▶</a></div>
@@ -587,19 +593,19 @@
     </details>
 
     <details class="acc">
-        <summary><span class="icon">📄</span><span class="sum-main">ビラ担当<small class="note">ビラ・教室掲示ポスター</small></span></summary>
+        <summary><span class="icon">📄</span><span class="sum-main">ビラ担当<small class="note">ビラ・ポスター</small></span></summary>
         <div class="acc-body">
             <h5>やること</h5>
             <ul>
-                <li>3月中にデザイン完成、ハガキサイズで約400部印刷</li>
-                <li>A4に拡大コピーして教室掲示ポスターにする</li>
+                <li>3月中に完成、ハガキ約400部</li>
+                <li>A4に拡大して教室掲示ポスターに</li>
             </ul>
             <h5>ノウハウ</h5>
             <ul>
-                <li>情報は最小限：キャッチコピー（今年は「次は、水球」）、場所、練習日、QR</li>
-                <li>QRはウェブに飛ばす。URLが確定してから作る</li>
-                <li>当日配るのは約300枚で足りる</li>
-                <li>デザインで揉めないよう、最終決定する人と期限を先に決める</li>
+                <li>情報は最小限：キャッチコピー、場所、練習日、QR</li>
+                <li>QRはウェブへ、URL確定後に作る</li>
+                <li>当日配るのは約300枚</li>
+                <li>最終決定する人と期限を先に決める</li>
             </ul>
         </div>
     </details>
@@ -609,17 +615,17 @@
         <div class="acc-body">
             <h5>やること</h5>
             <ul>
-                <li>3月中にスライド完成、教室の機材で動画が流せるか確認</li>
+                <li>3月中に完成、教室の機材で動画が流れるか確認</li>
             </ul>
             <h5>ノウハウ</h5>
             <ul>
-                <li>前年のスライドを使い、写真を今年のものに差し替える</li>
-                <li>前年は、部員がスライドやショート動画に合わせて質問に答える形式だった</li>
-                <li>教室は「体験に行く背中を押すプラスアルファ」の場。話す内容を増やして、来る意味をつくる</li>
+                <li>前年のスライドに、今年の写真を差し替え</li>
+                <li>前年は、部員がスライドや動画に合わせて質問に答える形式</li>
+                <li>教室は体験への後押し、来る意味をつくる</li>
             </ul>
             <h5>素材</h5>
             <div class="resource"><span>2026年 教室説明会（一部）</span><a href="https://youtu.be/-dz92iwFA1k" target="_blank">▶</a></div>
-            <p class="note">スライド（新歓.pptx）は部のDiscordの新歓スレッドを参照。</p>
+            <p class="note">スライドは部のDiscordの新歓スレッドに</p>
         </div>
     </details>
 
@@ -628,14 +634,15 @@
         <div class="acc-body">
             <h5>やること</h5>
             <ul>
-                <li>ビラ配り、月火水金15:00に協生館の正面玄関前（外側）で看板を持って待つ</li>
-                <li>担当の新入生（バディ）に毎回声をかけ、帰り際に「次いつ来る？」と聞く</li>
+                <li>ビラ配り</li>
+                <li>月火水金15:00、協生館正面玄関前（外側）で看板を持って待つ</li>
+                <li>バディの新入生に毎回声をかける、「次いつ来る？」</li>
             </ul>
             <h5>ノウハウ</h5>
             <ul>
-                <li>ビラを配る時は一声かける。廊下に落とされて生徒会に注意されたことがある</li>
-                <li>ローソン前は他の部と重なるので使わない</li>
-                <li>原石の条件（03）に当てはまりそうな子には、特に時間をかける</li>
+                <li>ビラは一声かけて手渡し、廊下に落ちないように</li>
+                <li>ローソン前は他の部と重なる、使わない</li>
+                <li>水球に向いていそうな子には、魅力をしっかり伝える</li>
             </ul>
         </div>
     </details>
@@ -646,30 +653,30 @@
 <!-- ==================== 07 過去のトラブル ==================== -->
 <section class="panel" id="trouble">
     <h2>過去のトラブル</h2>
-    <p class="lead">同じ失敗はしない。毎年5月に追記すること。</p>
+    <p class="lead">同じ失敗はしない<br>毎年5月に追記</p>
 
     <div class="table-wrap">
         <table>
-            <tr><th>トラブル</th><th>どうすれば防げたか</th></tr>
-            <tr><td>教室が取れなかった・ビラの許可が下りなかった（2年前）</td><td>3月上旬までに申請する。主務の最初の仕事にする</td></tr>
-            <tr><td>仮入部12人のうち半分が本入部しなかった</td><td>仮入部期間は新入生を優先し、平日練習まで設計する（04）</td></tr>
-            <tr><td>ポスター提出後にウェブのURLが変わり、QRを差し替えられなかった</td><td>URLを確定してからQRを作る。一度刷ったURLは変えない</td></tr>
-            <tr><td>動画の元データが消えて、作り直しになった</td><td>元データは共有ドライブにもバックアップする</td></tr>
-            <tr><td>投稿やプロフィールにウェブへの導線が入っていなかった</td><td>完成度より公開を優先する。後から直せる</td></tr>
-            <tr><td>集合場所（ローソン前）が他の部と重なって分かりにくかった</td><td>協生館の正面玄関前（外側）で、大きな看板を持って待つ</td></tr>
-            <tr><td>新入生がビラを廊下に落として、生徒会に注意された</td><td>配る時に一声かける。配る場所と枚数を絞る</td></tr>
-            <tr><td>ビラの枚数で困った</td><td>当日配る分は約300枚で足りる</td></tr>
-            <tr><td>ビラのデザインやQRの載せ方で揉めた</td><td>決める人と期限を先に決める</td></tr>
-            <tr><td>タスクに期限がなく、進みが見えなかった</td><td>2月の時点で全タスクに期限を書く</td></tr>
-            <tr><td>見込み「最終8人」が実際は6人だった</td><td>「確定」と「迷っている」を分けて報告する</td></tr>
-            <tr><td>締切を伝えた後で、追加の勧誘ができなかった</td><td>締切前に、迷っている子と1対1で話す</td></tr>
-            <tr><td>引き継ぎが前任者頼みで止まった</td><td>このページを引き継ぎにする</td></tr>
+            <tr><th>トラブル</th><th>対策</th></tr>
+            <tr><td>教室が取れない・ビラの許可が下りない（2年前）</td><td>3月上旬までに申請、主務の最初の仕事</td></tr>
+            <tr><td>仮入部12人のうち、本入部は6人</td><td>仮入部期間は新入生優先、平日練習まで設計</td></tr>
+            <tr><td>ポスター提出後にURLが変わった</td><td>URL確定後にQR、刷ったURLは変えない</td></tr>
+            <tr><td>動画の元データが消えた</td><td>共有ドライブにバックアップ</td></tr>
+            <tr><td>投稿・プロフィールにウェブ導線がなかった</td><td>完成度より公開優先</td></tr>
+            <tr><td>集合場所（ローソン前）が他の部と重なった</td><td>協生館正面玄関前、大きな看板</td></tr>
+            <tr><td>ビラが廊下に落ちていて、生徒会から指摘を受けた</td><td>一声かけて渡す、場所と枚数を絞る</td></tr>
+            <tr><td>ビラの枚数で困った</td><td>当日は約300枚で足りる</td></tr>
+            <tr><td>ビラのデザイン・QRで意見が割れた</td><td>決める人と期限を先に決める</td></tr>
+            <tr><td>タスクに期限がなかった</td><td>2月に全タスクの期限を書く</td></tr>
+            <tr><td>「最終8人」の見込みが6人</td><td>確定と迷っているを分けて報告</td></tr>
+            <tr><td>締切後に追加の勧誘ができなかった</td><td>締切前に1対1で話す</td></tr>
+            <tr><td>引き継ぎの仕組みがなかった</td><td>このページを引き継ぎにする</td></tr>
         </table>
     </div>
 </section>
 
 <footer>
-    最終更新：2026年11月 ／ 毎年5月の振り返り後に、新歓リーダーが追記すること<br>
+    最終更新：2026年11月<br>毎年5月の振り返り後、新歓リーダーが追記<br>
     <a href="index.html">新入生向けトップページ</a>
 </footer>
 
